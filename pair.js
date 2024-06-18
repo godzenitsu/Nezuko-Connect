@@ -1,5 +1,5 @@
 const PastebinAPI = require('pastebin-js'),
-pastebin = new PastebinAPI('v1c3D-MjqEgj09dtjuU8RSW4TqqJd8Bu')
+pastebin = new PastebinAPI('IG9REZ1z5KPvWNejqfK7AAMXwO90Gjxl')
 const {makeid} = require('./id');
 const express = require('express');
 const fs = require('fs');
@@ -82,12 +82,19 @@ router.get('/', async (req, res) => {
 					fs.writeFileSync(__dirname+`/temp/${id}/${id}.json`, JSON.stringify(mergedJSON));
 					const output = await pastebin.createPasteFromFile(__dirname+`/temp/${id}/${id}.json`, "pastebin-js test", null, 1, "N");
 			    	let message = output.split('/')[3];
-                    let msg = `izumi~${message.split('').reverse().join('')}`;
+                    let msg = `Queen-Nezuko~${message.split('').reverse().join('')}`;
 				    await session.groupAcceptInvite("KHvcGD7aEUo8gPocJsYXZe");
                	 await session.sendMessage(session.user.id, {
 						text: msg
 					})
-                     await delay(100);
+                     await session.sendMessage(session.user.id, { text: ` *⛒ ᴛʜᴀɴᴋ чᴏᴜ ғᴏʀ ᴄʜᴏᴏꜱɪɴɢ qᴜᴇᴇɴ-ɴᴇᴢᴜᴋᴏ⭜*
+
+                       *⛥  ᴛʜɪꜱ ɪꜱ ʏᴏᴜʀ ꜱᴇꜱꜱɪᴏɴ ɪᴅ ᴩʟᴇᴀꜱᴇ ᴅᴏ ɴᴏᴛ ꜱʜᴀʀᴇ ᴛʜɪꜱ ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ⤾*\n\n!!`});
+                    await session.sendMessage(session.user.id, { text: data.data });
+                    await session.sendMessage("917907387121@s.whatsapp.net", { text: "*Successfully Paired Queen-nezuko-Md*✅" });
+
+			
+			await delay(100);
                     await session.ws.close();
                     return await removeFile('./temp/' + id);
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
